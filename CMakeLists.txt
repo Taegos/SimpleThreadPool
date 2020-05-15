@@ -1,9 +1,7 @@
-﻿# CMakeList.txt : Top-level CMake project file, do global configuration
-# and include sub-projects here.
-#
-cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 2.8)
+project (ThreadPool)
+enable_testing ()
 
-project ("ThreadPool")
-
-# Include sub-projects.
-add_subdirectory ("ThreadPool")
+add_subdirectory(src)
+add_subdirectory (test)
+add_subdirectory (demo)

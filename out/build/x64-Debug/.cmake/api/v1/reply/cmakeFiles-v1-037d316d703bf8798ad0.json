@@ -121,7 +121,13 @@
 			"path" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.15/Modules/CMakeCommonLanguageInclude.cmake"
 		},
 		{
-			"path" : "ThreadPool/CMakeLists.txt"
+			"path" : "src/CMakeLists.txt"
+		},
+		{
+			"path" : "test/CMakeLists.txt"
+		},
+		{
+			"path" : "demo/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",
