@@ -1,33 +1,48 @@
 #include "ThreadPool.h"
 
+
 ThreadPool::ThreadPool(int size) {
 	for (int i = 0; i < size; i++) {
 		std::thread thread{ &ThreadPool::runTasks, this };
 		thread.detach();
+		exitSema.up();
 	}
 }
 
+
 ThreadPool::~ThreadPool() {
-	exitSema.wait();
+	queueSema.destroy(); //releases threads that are waiting for task
+	exitSema.wait(); //waits for threads to finnish
 }
+
 
 void ThreadPool::enqueue(TASK task) {
-	std::unique_lock<std::mutex> lock(queueMut);
-	queue.emplace(task);
-	lock.unlock();
+
+	{
+		std::lock_guard<std::mutex> lock(queueMut);
+		queue.emplace(task);
+	}
+
 	queueSema.up();
-	exitSema.up();
 }
 
+
 void ThreadPool::runTasks() {
+
 	queueSema.down();
 
-	std::unique_lock<std::mutex> lock(queueMut);
-	TASK task = queue.front();
-	queue.pop();
-	lock.unlock();
+	if (queueSema.isDestroyed() && queue.empty()) {
+		exitSema.down();
+		return;
+	}
 
+	TASK task;
+	{
+		std::lock_guard<std::mutex> lock(queueMut);
+		task = queue.front();
+		queue.pop();
+	}
+	
 	task();
-	exitSema.down();
 	runTasks();
 }

@@ -1,7 +1,7 @@
 #pragma once
-
 #include "Semaphore.h"
 #include "ExitSemaphore.h"
+#include <condition_variable>
 #include <functional>
 #include <queue>
 
@@ -15,9 +15,11 @@ public:
 	void enqueue(TASK);
 
 private:
+
 	ExitSemaphore exitSema;
-	Semaphore queueSema;
+
 	std::mutex queueMut;
+	Semaphore queueSema;
 	std::queue<TASK> queue;
 
 	void runTasks();

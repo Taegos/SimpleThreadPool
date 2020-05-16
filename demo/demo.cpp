@@ -56,28 +56,24 @@ function<void()> timer(int ms) {
 void threadPoolDemo() {
 
 	ThreadPool pool{ 5 };
-
 	pool.enqueue(timer(1500));
 	pool.enqueue(timer(1600));
 	pool.enqueue(timer(1900));
 	pool.enqueue(timer(1700));
 	pool.enqueue(timer(1650));
 
-	pool.enqueue(timer(2100));
-	pool.enqueue(timer(1350));
-	pool.enqueue(timer(1762));
+	pool.enqueue(timer(1400));
+	pool.enqueue(timer(1500));
+	pool.enqueue(timer(1600));
+
+	ThreadPool pool0{ 5 };
+	this_thread::sleep_for(chrono::milliseconds(2000));
 }
 
 
 int main()
 {
-	cout << "Semaphore Demo:" << endl << endl;
-	this_thread::sleep_for(chrono::milliseconds(600)); 
 	semaphoreDemo();
-	this_thread::sleep_for(chrono::milliseconds(600));
-
-	cout << endl << "Threadpool Demo:" << endl << endl;
-	this_thread::sleep_for(chrono::milliseconds(600));
 	threadPoolDemo();
 	return 0;
 }

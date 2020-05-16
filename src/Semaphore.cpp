@@ -10,7 +10,19 @@ void Semaphore::up() {
 
 void Semaphore::down() {
 	std::unique_lock<std::mutex> lock(mx);
-	auto pred = [&count = count]() { return count > 0; };
+	auto pred = [&count=count, &destroyed=destroyed]() { return count > 0 || destroyed; };
 	cnd.wait(lock, pred);
-	count--;
+	if (!destroyed) count--;
+}
+
+
+void Semaphore::destroy() {
+	std::unique_lock<std::mutex> lock(mx);
+	destroyed = true;
+	cnd.notify_all();
+}
+
+
+bool Semaphore::isDestroyed() {
+	return destroyed;
 }
