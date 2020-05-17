@@ -80,6 +80,7 @@ build cmake_object_order_depends_target_ThreadPool: phony || src\CMakeFiles\Thre
 
 build src\CMakeFiles\ThreadPool.dir\ThreadPool.cpp.obj: CXX_COMPILER__ThreadPool ..\..\..\src\ThreadPool.cpp || cmake_object_order_depends_target_ThreadPool
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\src\headers
   OBJECT_DIR = src\CMakeFiles\ThreadPool.dir
   OBJECT_FILE_DIR = src\CMakeFiles\ThreadPool.dir
   TARGET_COMPILE_PDB = src\CMakeFiles\ThreadPool.dir\ThreadPool.pdb
@@ -87,6 +88,7 @@ build src\CMakeFiles\ThreadPool.dir\ThreadPool.cpp.obj: CXX_COMPILER__ThreadPool
 
 build src\CMakeFiles\ThreadPool.dir\Semaphore.cpp.obj: CXX_COMPILER__ThreadPool ..\..\..\src\Semaphore.cpp || cmake_object_order_depends_target_ThreadPool
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\src\headers
   OBJECT_DIR = src\CMakeFiles\ThreadPool.dir
   OBJECT_FILE_DIR = src\CMakeFiles\ThreadPool.dir
   TARGET_COMPILE_PDB = src\CMakeFiles\ThreadPool.dir\ThreadPool.pdb
@@ -94,6 +96,7 @@ build src\CMakeFiles\ThreadPool.dir\Semaphore.cpp.obj: CXX_COMPILER__ThreadPool 
 
 build src\CMakeFiles\ThreadPool.dir\ExitSemaphore.cpp.obj: CXX_COMPILER__ThreadPool ..\..\..\src\ExitSemaphore.cpp || cmake_object_order_depends_target_ThreadPool
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\src\headers
   OBJECT_DIR = src\CMakeFiles\ThreadPool.dir
   OBJECT_FILE_DIR = src\CMakeFiles\ThreadPool.dir
   TARGET_COMPILE_PDB = src\CMakeFiles\ThreadPool.dir\ThreadPool.pdb
@@ -192,7 +195,7 @@ build cmake_object_order_depends_target_Test: phony || cmake_object_order_depend
 
 build Test\CMakeFiles\Test.dir\test.cpp.obj: CXX_COMPILER__Test ..\..\..\test\test.cpp || cmake_object_order_depends_target_Test
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  INCLUDES = -I..\..\..\src
+  INCLUDES = -I..\..\..\src\headers
   OBJECT_DIR = Test\CMakeFiles\Test.dir
   OBJECT_FILE_DIR = Test\CMakeFiles\Test.dir
   TARGET_COMPILE_PDB = Test\CMakeFiles\Test.dir\
@@ -246,7 +249,7 @@ build cmake_object_order_depends_target_Demo: phony || cmake_object_order_depend
 
 build Demo\CMakeFiles\Demo.dir\demo.cpp.obj: CXX_COMPILER__Demo ..\..\..\demo\demo.cpp || cmake_object_order_depends_target_Demo
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  INCLUDES = -I..\..\..\src
+  INCLUDES = -I..\..\..\src\headers
   OBJECT_DIR = Demo\CMakeFiles\Demo.dir
   OBJECT_FILE_DIR = Demo\CMakeFiles\Demo.dir
   TARGET_COMPILE_PDB = Demo\CMakeFiles\Demo.dir\

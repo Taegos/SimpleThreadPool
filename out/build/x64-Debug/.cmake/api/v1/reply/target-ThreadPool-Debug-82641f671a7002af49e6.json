@@ -20,7 +20,8 @@
 	{
 		"commands" : 
 		[
-			"add_library"
+			"add_library",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -34,6 +35,12 @@
 			{
 				"command" : 0,
 				"file" : 0,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
 				"line" : 1,
 				"parent" : 0
 			}
@@ -46,6 +53,13 @@
 			[
 				{
 					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1  "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/Benjamin/Source/Repos/ThreadPool/src/headers"
 				}
 			],
 			"language" : "CXX",

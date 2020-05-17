@@ -64,3 +64,13 @@
 694	852	611370887	Demo/Demo.exe	b80f01645040dc85
 1	549	611370898	Test/CMakeFiles/Test.dir/test.cpp.obj	2bc08b7721a48b1c
 549	740	611370899	Test/Test.exe	915be8ec3fc52b7d
+1	1257	611415042	build.ninja	7b2d7058ebff2f6e
+7	608	611415043	Demo/CMakeFiles/Demo.dir/demo.cpp.obj	ac22c2f2f441e07a
+1	225	611415092	build.ninja	7b2d7058ebff2f6e
+1	186	611415135	build.ninja	7b2d7058ebff2f6e
+3	526	611415135	src/CMakeFiles/ThreadPool.dir/ExitSemaphore.cpp.obj	6420a650ee919528
+1	529	611415135	src/CMakeFiles/ThreadPool.dir/Semaphore.cpp.obj	9ba9fd06ba238504
+6	532	611415135	src/CMakeFiles/ThreadPool.dir/ThreadPool.cpp.obj	65af36985c315e41
+532	578	611415135	src/ThreadPool.lib	150522607ff0d6d7
+578	819	611415135	Demo/Demo.exe	b80f01645040dc85
+1	341	611453758	build.ninja	7b2d7058ebff2f6e
